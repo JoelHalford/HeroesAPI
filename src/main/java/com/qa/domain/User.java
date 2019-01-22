@@ -9,7 +9,7 @@ import javax.persistence.Table;
 //Entity uses JPA
 @Entity
 @Table(name = "USERS")
-public class Users 
+public class User 
 {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
@@ -17,14 +17,14 @@ public class Users
 	private String username;
 	private String password;
     
-	public Users(Long userID, String username, String password) 
+	public User(Long userID, String username, String password) 
 	{
 		this.userID = userID;
 		this.username = username;
 		this.password = password;
 	}
 	
-	public Users() {
+	public User() {
 
 	}
 	

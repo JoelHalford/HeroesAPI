@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "HEROES")
-public class Heroes {	
+public class Hero {	
 	
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
@@ -26,7 +26,7 @@ public class Heroes {
 	private String trait;
 	private  String tag;	
 	
-	public Heroes(String name, String heroClass, String universe, String difficulty, String description,
+	public Hero(String name, String heroClass, String universe, String difficulty, String description,
 			String basic1, String basic2, String basic3, String ult1, String ult2, String trait, String tag) 
 	{
 		this.name = name;
@@ -43,7 +43,7 @@ public class Heroes {
 		this.tag = tag;
 	}
 	
-	public Heroes() {
+	public Hero() {
 
 	}
 
