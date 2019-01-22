@@ -1,5 +1,153 @@
 package com.qa.domain;
 
-public class Heroes {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "HEROES")
+public class Heroes {	
+	
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	private Long heroID;
+	private String name;
+	private String heroClass;
+	private String universe;
+	private String difficulty;
+	private String description;
+	private String basic1;
+	private String basic2;
+	private String basic3;
+	private String ult1;
+	private String ult2;
+	private String trait;
+	private  String tag;	
+	
+	public Heroes(String name, String heroClass, String universe, String difficulty, String description,
+			String basic1, String basic2, String basic3, String ult1, String ult2, String trait, String tag) 
+	{
+		this.name = name;
+		this.heroClass = heroClass;
+		this.universe = universe;
+		this.difficulty = difficulty;
+		this.description = description;
+		this.basic1 = basic1;
+		this.basic2 = basic2;
+		this.basic3 = basic3;
+		this.ult1 = ult1;
+		this.ult2 = ult2;
+		this.trait = trait;
+		this.tag = tag;
+	}
+	
+	public Heroes() {
+
+	}
+
+	public Long getId() {
+		return heroID;
+	}
+
+	public void setId(Long id) {
+		this.heroID = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getHeroClass() {
+		return heroClass;
+	}
+
+	public void setHeroClass(String heroClass) {
+		this.heroClass = heroClass;
+	}
+
+	public String getUniverse() {
+		return universe;
+	}
+
+	public void setUniverse(String universe) {
+		this.universe = universe;
+	}
+
+	public String getDifficulty() {
+		return difficulty;
+	}
+
+	public void setDifficulty(String difficulty) {
+		this.difficulty = difficulty;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getBasic1() {
+		return basic1;
+	}
+
+	public void setBasic1(String basic1) {
+		this.basic1 = basic1;
+	}
+
+	public String getBasic3() {
+		return basic3;
+	}
+
+	public void setBasic3(String basic3) {
+		this.basic3 = basic3;
+	}
+
+	public String getBasic2() {
+		return basic2;
+	}
+
+	public void setBasic2(String basic2) {
+		this.basic2 = basic2;
+	}
+
+	public String getUlt1() {
+		return ult1;
+	}
+
+	public void setUlt1(String ult1) {
+		this.ult1 = ult1;
+	}
+
+	public String getUlt2() {
+		return ult2;
+	}
+
+	public void setUlt2(String ult2) {
+		this.ult2 = ult2;
+	}
+
+	public String getTrait() {
+		return trait;
+	}
+
+	public void setTrait(String trait) {
+		this.trait = trait;
+	}
+
+	public String getTag() {
+		return tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+	}
 }
