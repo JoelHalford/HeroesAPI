@@ -27,7 +27,7 @@ public class HotsDBRepository implements HotsRepository {
 	@Inject
 	private JSONUtil util;
 
-	public String getAll() {
+	public String getAllHeroes() {
 		// TODO Auto-generated method stub
 		Query query = manager.createQuery("Select a FROM Hero a");
 		Collection<Hero> heroes = (Collection<Hero>) query.getResultList();

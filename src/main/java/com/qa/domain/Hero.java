@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "HEROES")
+@Table(name="HERO")
 public class Hero {	
 	
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,10 +24,11 @@ public class Hero {
 	private String ult1;
 	private String ult2;
 	private String trait;
+	private String image;
 	private  String tag;	
 	
 	public Hero(String name, String heroClass, String universe, String difficulty, String description,
-			String basic1, String basic2, String basic3, String ult1, String ult2, String trait, String tag) 
+			String basic1, String basic2, String basic3, String ult1, String ult2, String trait, String image, String tag) 
 	{
 		this.name = name;
 		this.heroClass = heroClass;
@@ -40,6 +41,7 @@ public class Hero {
 		this.ult1 = ult1;
 		this.ult2 = ult2;
 		this.trait = trait;
+		this.image = image;
 		this.tag = tag;
 	}
 	
@@ -149,5 +151,13 @@ public class Hero {
 
 	public void setTag(String tag) {
 		this.tag = tag;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 }

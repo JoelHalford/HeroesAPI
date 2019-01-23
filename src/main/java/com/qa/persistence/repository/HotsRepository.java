@@ -2,7 +2,7 @@ package com.qa.persistence.repository;
 
 public interface HotsRepository {
 	
-	String getAll();
+	String getAllHeroes();
 
 	String addUser(String hero);
 
