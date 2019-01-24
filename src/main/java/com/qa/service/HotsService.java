@@ -1,5 +1,6 @@
 package com.qa.service;
 
-public class HotsService {
+public interface HotsService {
 
+	String getAllHeroes();
 }

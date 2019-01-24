@@ -8,7 +8,6 @@ import javax.persistence.Table;
 
 //Entity uses JPA
 @Entity
-@Table(name = "USERS")
 public class User 
 {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
