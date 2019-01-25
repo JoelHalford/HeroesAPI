@@ -44,13 +44,12 @@ public class HotsDBRepository implements HotsRepository {
 	}
 
 	@Transactional(REQUIRED)
-	public String addUser(String user) {
-		// TODO Auto-generated method stub
-		User aUser = util.getObjectForJSON(user, User.class);
-		manager.persist(aUser);
+	public String createAccount(String account) {
+		User anAccount = util.getObjectForJSON(account, User.class);
+		manager.persist(anAccount);
 		return "{\"message\": \"account has been sucessfully added\"}";
 	}
-
+	
 	public String updateUser(Long id, String userToUpdate) {
 
 		return "{\"message\": \"account sucessfully updated\"}";
@@ -80,5 +79,4 @@ public class HotsDBRepository implements HotsRepository {
 	public void setUtil(JSONUtil util) {
 		this.util = util;
 	}
-
 }

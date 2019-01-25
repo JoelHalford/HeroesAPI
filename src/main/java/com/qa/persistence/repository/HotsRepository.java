@@ -4,7 +4,7 @@ public interface HotsRepository {
 	
 	String getAllHeroes();
 
-	String addUser(String hero);
+	String createAccount(String account);
 
 	String updateUser(Long id, String accountToUpdate);
 

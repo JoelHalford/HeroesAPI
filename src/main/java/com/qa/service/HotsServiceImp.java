@@ -23,4 +23,8 @@ public class HotsServiceImp implements HotsService {
 		// TODO Auto-generated method stub
 		return repo.getSingleHero(id);
 	}
+
+	public String addAccount(String account) {
+		return repo.createAccount(account);
+	}
 }

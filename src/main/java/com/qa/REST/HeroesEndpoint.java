@@ -28,6 +28,13 @@ public class HeroesEndpoint {
 	public String getHero(@PathParam("id") Long id) {
 		return service.getHero(id);
 	}
+	
+	@Path("/createAccount")
+	@POST
+	@Produces({ "application/json" })
+	public String addAccount(String account) {
+		return service.addAccount(account);
+	}
 		
 	public void setService(HotsService service) {
 		this.service = service;
