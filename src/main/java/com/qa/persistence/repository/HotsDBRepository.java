@@ -33,6 +33,15 @@ public class HotsDBRepository implements HotsRepository {
 		Collection<Hero> heroes = (Collection<Hero>) query.getResultList();
 		return util.getJSONForObject(heroes);
 	}
+	
+	@Transactional(REQUIRED)
+	public String getSingleHero(Long id) {
+		Hero hero = findHero(id);
+		if (hero != null) {
+			return util.getJSONForObject(hero);
+		}
+		return "{\"message\": \"Hero not found.\"}";
+	}
 
 	@Transactional(REQUIRED)
 	public String addUser(String user) {
