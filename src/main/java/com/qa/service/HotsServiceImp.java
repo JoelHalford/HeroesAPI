@@ -17,4 +17,10 @@ public class HotsServiceImp implements HotsService {
 	public String getAllHeroes() {
 		return repo.getAllHeroes();
 	}
+
+
+	public String getHero(Long id) {
+		// TODO Auto-generated method stub
+		return repo.getSingleHero(id);
+	}
 }

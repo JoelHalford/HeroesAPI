@@ -21,6 +21,13 @@ public class HeroesEndpoint {
 	public String getAllHeroes() {
 		return service.getAllHeroes();
 	}
+	
+	@Path("/hero/{id}")
+	@GET
+	@Produces({ "application/json" })
+	public String getHero(@PathParam("id") Long id) {
+		return service.getHero(id);
+	}
 		
 	public void setService(HotsService service) {
 		this.service = service;

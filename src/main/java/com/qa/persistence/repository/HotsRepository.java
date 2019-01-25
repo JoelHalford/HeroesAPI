@@ -9,4 +9,6 @@ public interface HotsRepository {
 	String updateUser(Long id, String accountToUpdate);
 
 	String deleteUser(Long id);
+
+	String getSingleHero(Long id);
 }
