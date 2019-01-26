@@ -6,9 +6,11 @@ public interface HotsRepository {
 
 	String createAccount(String account);
 
-	String updateUser(Long id, String accountToUpdate);
+	String updateAccount(Long id, String accountToUpdate);
 
-	String deleteUser(Long id);
+	String deleteAccount(Long id);
 
 	String getSingleHero(Long id);
+
+	String getAllAccounts();
 }

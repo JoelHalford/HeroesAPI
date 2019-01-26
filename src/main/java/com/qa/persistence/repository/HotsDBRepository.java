@@ -28,7 +28,6 @@ public class HotsDBRepository implements HotsRepository {
 	private JSONUtil util;
 
 	public String getAllHeroes() {
-		// TODO Auto-generated method stub
 		Query query = manager.createQuery("Select a FROM Hero a");
 		Collection<Hero> heroes = (Collection<Hero>) query.getResultList();
 		return util.getJSONForObject(heroes);
@@ -50,12 +49,20 @@ public class HotsDBRepository implements HotsRepository {
 		return "{\"message\": \"account has been sucessfully added\"}";
 	}
 	
-	public String updateUser(Long id, String userToUpdate) {
-
+	@Transactional(REQUIRED)
+	public String updateAccount(Long id, String accountToUpdate) {
+		System.out.println(accountToUpdate);
+		User updatedAccount = util.getObjectForJSON(accountToUpdate, User.class);
+		User accountFromDB = findUser(id);
+		if (accountToUpdate != null) {
+			accountFromDB = updatedAccount;
+			manager.merge(accountFromDB);
+		}
 		return "{\"message\": \"account sucessfully updated\"}";
 	}
 
-	public String deleteUser(Long id) {
+	@Transactional(REQUIRED)
+	public String deleteAccount(Long id) {
 		// TODO Auto-generated method stub
 		User userInDB = findUser(id);
 		if (userInDB != null) {
@@ -78,5 +85,11 @@ public class HotsDBRepository implements HotsRepository {
 
 	public void setUtil(JSONUtil util) {
 		this.util = util;
+	}
+
+	public String getAllAccounts() {
+		Query query = manager.createQuery("Select a FROM User a");
+		Collection<User> users = (Collection<User>) query.getResultList();
+		return util.getJSONForObject(users);
 	}
 }
