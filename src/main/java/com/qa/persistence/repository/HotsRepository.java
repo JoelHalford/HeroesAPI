@@ -11,6 +11,8 @@ public interface HotsRepository {
 	String deleteAccount(Long id);
 
 	String getSingleHero(Long id);
+	
+	String getSingleAccount(String username);
 
 	String getAllAccounts();
 }

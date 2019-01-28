@@ -32,7 +32,11 @@ public class HotsServiceImp implements HotsService {
 		// TODO Auto-generated method stub
 		return repo.getAllAccounts();
 	}
-
+	
+	public String getAccount(String username) {
+		// TODO Auto-generated method stub
+		return repo.getSingleAccount(username);
+	}
 	public String updateAccount(Long id, String account) {
 		return repo.updateAccount(id, account);
 	}

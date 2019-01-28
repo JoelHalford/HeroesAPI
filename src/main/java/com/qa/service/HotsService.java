@@ -7,6 +7,8 @@ public interface HotsService {
 	String getHero(Long id);
 	
 	String getAllAccounts();
+	
+	String getAccount(String username);
 
 	String addAccount(String account);
 	

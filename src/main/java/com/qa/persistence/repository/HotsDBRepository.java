@@ -43,6 +43,15 @@ public class HotsDBRepository implements HotsRepository {
 	}
 
 	@Transactional(REQUIRED)
+	public String getSingleAccount(String username) {
+		User account = findAccount(username);
+		if (account != null) {
+			return util.getJSONForObject(account);
+		}
+		return "{\"message\": \"Account not found.\"}";
+	}
+	
+	@Transactional(REQUIRED)
 	public String createAccount(String account) {
 		User anAccount = util.getObjectForJSON(account, User.class);
 		manager.persist(anAccount);
@@ -77,6 +86,10 @@ public class HotsDBRepository implements HotsRepository {
 	
 	private Hero findHero(Long id) {
 		return manager.find(Hero.class, id);
+	}
+	
+	private User findAccount(String username) {
+		return manager.find(User.class, username);
 	}
 
 	public void setManager(EntityManager manager) {

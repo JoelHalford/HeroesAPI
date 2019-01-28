@@ -37,6 +37,13 @@ public class HeroesEndpoint {
 		return service.getAllAccounts();
 	}
 	
+	@Path("/account/{username}")
+	@GET
+	@Produces({ "application/json" })
+	public String getAccount(@PathParam("username") String username) {
+		return service.getAccount(username);
+	}
+	
 	@Path("/createAccount")
 	@POST
 	@Produces({ "application/json" })
@@ -53,7 +60,7 @@ public class HeroesEndpoint {
 	
 	@Path("/deleteAccount/{id}")
 	@DELETE
-	public String getAccount(@PathParam("id") Long id) {
+	public String deleteAccount(@PathParam("id") Long id) {
 		return service.deleteAccount(id);
 	}
 	

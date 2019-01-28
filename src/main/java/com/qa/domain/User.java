@@ -1,5 +1,6 @@
 package com.qa.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,7 +14,9 @@ public class User
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
 	private Long userID;
+	@Column(unique = true)
 	private String username;
+	@Column()
 	private String password;
     
 	public User(Long userID, String username, String password) 
