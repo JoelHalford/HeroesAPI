@@ -1,5 +1,6 @@
 package com.qa.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,19 +14,33 @@ public class Hero {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
 	private Long heroID;
+	@Column(unique = true, nullable = false)
 	private String name;
+	@Column(nullable = false)
 	private String heroClass;
+	@Column(nullable = false)
 	private String universe;
+	@Column(nullable = false)
 	private String difficulty;
+	@Column(nullable = false)
 	private String description;
+	@Column(nullable = false)
 	private String basic1;
+	@Column(nullable = false)
 	private String basic2;
+	@Column(nullable = false)
 	private String basic3;
+	@Column(nullable = false)
 	private String ult1;
+	@Column(nullable = false)
 	private String ult2;
+	@Column(nullable = false)
 	private String trait;
+	@Column(nullable = true)
 	private String image;
+	@Column(nullable = false)
 	private  String tag;	
+	
 	
 	public Hero(String name, String heroClass, String universe, String difficulty, String description,
 			String basic1, String basic2, String basic3, String ult1, String ult2, String trait, String image, String tag) 
@@ -45,8 +60,8 @@ public class Hero {
 		this.tag = tag;
 	}
 	
-	public Hero() {
-
+	public Hero() 
+	{//default constructor
 	}
 
 	public Long getId() {

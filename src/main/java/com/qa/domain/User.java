@@ -6,28 +6,34 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
-//Entity uses JPA
+//Entity uses JPA to set up a table
 @Entity
+@Table(name = "USER")
 public class User 
 {
+	//Generates a unique value
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	//Sets up a primary key
 	@Id
 	private Long userID;
-	@Column(unique = true)
+	//column must be unique
+	@Column(unique = true, nullable = false)
+	@Size(min = 4, max = 12)
 	private String username;
-	@Column()
+	@Column(nullable = false)
 	private String password;
     
 	public User(Long userID, String username, String password) 
-	{
+	{//constructor for setting user
 		this.userID = userID;
 		this.username = username;
 		this.password = password;
 	}
 	
-	public User() {
-
+	public User() 
+	{//default constructor
 	}
 	
 	public Long getId() {

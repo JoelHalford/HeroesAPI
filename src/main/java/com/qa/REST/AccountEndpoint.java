@@ -17,6 +17,7 @@ public class AccountEndpoint {
 	@Inject
 	private AccountService service;
 	
+	//HTTP GET request with path /getAllAccounts
 	@Path("/getAllAccounts")
 	@GET
 	@Produces({ "application/json" })
