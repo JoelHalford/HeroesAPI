@@ -8,7 +8,8 @@ import javax.ws.rs.container.ContainerResponseFilter;
 import javax.ws.rs.ext.Provider;
 
 @Provider
-public class CORSFilter implements ContainerResponseFilter {
+public class CORSFilter implements ContainerResponseFilter 
+{//sets up the headers for CORS (Cross-origin resource sharing)
 
    public void filter(final ContainerRequestContext requestContext,
                       final ContainerResponseContext cres) throws IOException {
