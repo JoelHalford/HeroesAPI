@@ -20,6 +20,8 @@ public class AccountServiceImp implements AccountService {
 	
 	public String addAccount(String account) {
 		
+		String upperAlphaRegex = ".*[A-Z].*";
+		
 		User anAccount = util.getObjectForJSON(account, User.class);
 		
 		for (int i = 0; i < naughtyNames.length; i++)
@@ -35,6 +37,10 @@ public class AccountServiceImp implements AccountService {
 			else if (anAccount.getUsername().length() > 12)
 			{
 				return "Hero, your username is too long!";
+			}
+			else if (!anAccount.getUsername().matches(upperAlphaRegex))
+			{
+				return "For some reason, you need a capital letter.";
 			}
 		}
 		return repo.createAccount(account);

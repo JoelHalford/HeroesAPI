@@ -24,12 +24,15 @@ public class User
 	private String username;
 	@Column(nullable = false)
 	private String password;
+	@Column(nullable = true)
+	private boolean admin = false;
     
-	public User(Long userID, String username, String password) 
+	public User(Long userID, String username, String password, boolean admin) 
 	{//constructor for setting user
 		this.userID = userID;
 		this.username = username;
 		this.password = password;
+		this.admin = admin;
 	}
 	
 	public User() 
@@ -58,5 +61,13 @@ public class User
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	public boolean getAdmin() {
+		return admin;
+	}
+	
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
 	}
 }

@@ -42,6 +42,18 @@ public class HeroesDBRepository implements HeroesRepository {
 		return "{\"message\": \"Hero not found.\"}";
 	}
 	
+	public String updateHero(Long id, String heroToUpdate) {
+		Hero foundHero = findHero(id);
+		Hero jsonHero = util.getObjectForJSON(heroToUpdate, Hero.class);
+		if (foundHero != null)
+		{
+			manager.remove(foundHero);
+			manager.persist(jsonHero);
+			return "{\"message\": \"hero sucessfully updated\"}";
+		}
+		return null;
+	}
+	
 	private Hero findHero(Long id) {
 		return manager.find(Hero.class, id);
 	}
