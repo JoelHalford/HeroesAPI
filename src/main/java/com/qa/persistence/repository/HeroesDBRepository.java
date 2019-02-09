@@ -13,7 +13,6 @@ import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import com.qa.domain.Hero;
-import com.qa.domain.User;
 
 import com.qa.util.JSONUtil;
 

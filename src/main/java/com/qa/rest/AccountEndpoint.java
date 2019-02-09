@@ -1,4 +1,4 @@
-package com.qa.REST;
+package com.qa.rest;
 
 import javax.inject.Inject;
 import javax.ws.rs.DELETE;

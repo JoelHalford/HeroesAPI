@@ -47,12 +47,10 @@ public class AccountServiceImp implements AccountService {
 	}
 
 	public String getAllAccounts() {
-		// TODO Auto-generated method stub
 		return repo.getAllAccounts();
 	}
 	
 	public String getAccount(String username) {
-		// TODO Auto-generated method stub
 		return repo.getSingleAccount(username);
 	}
 	public String updateAccount(Long id, String account) {
@@ -60,7 +58,6 @@ public class AccountServiceImp implements AccountService {
 	}
 
 	public String deleteAccount(Long id) {
-		// TODO Auto-generated method stub
 		return repo.deleteAccount(id);
 	}
 }

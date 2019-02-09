@@ -1,4 +1,4 @@
-package com.qa.REST;
+package com.qa.rest;
 
 import java.io.IOException;
 

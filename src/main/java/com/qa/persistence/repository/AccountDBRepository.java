@@ -62,7 +62,6 @@ public class AccountDBRepository implements AccountRepository {
 
 	@Transactional(REQUIRED)
 	public String deleteAccount(Long id) {
-		// TODO Auto-generated method stub
 		User userInDB = findUser(id);
 		if (userInDB != null) {
 			manager.remove(userInDB);

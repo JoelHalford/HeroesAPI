@@ -14,7 +14,6 @@ public class HeroesServiceImp implements HeroesService {
 	}
 
 	public String getHero(Long id) {
-		// TODO Auto-generated method stub
 		return repo.getSingleHero(id);
 	}
 }
